@@ -32,11 +32,11 @@ include_directories(
   lua
 )
 
-add_library(tolualib STATIC
+add_library(tolua STATIC
   ${TOLUA_LIB}
 )
 
-set_target_properties(tolualib
+set_target_properties(tolua
     PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
@@ -59,6 +59,6 @@ endif(MSVC)
 
 add_subdirectory(lua)
 add_executable(tolua++ ${TOLUA_SRC})
-target_link_libraries(tolualib lua)
+target_link_libraries(tolua lua)
 target_link_libraries(tolua++ lua)
 

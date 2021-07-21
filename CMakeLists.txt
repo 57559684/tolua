@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required(VERSION 2.8)
-project(tolua)
+project(tolua++)
 
 set(TOLUA_SRC 
   tolua++.h
@@ -16,9 +16,32 @@ set(TOLUA_SRC
   tolua.c
 )
 
+set(TOLUA_LIB
+  tolua++.h
+  tolua_event.h
+  tolua_event.c
+  tolua_fix.h
+  tolua_fix.c
+  tolua_is.c
+  tolua_map.c
+  tolua_push.c
+  tolua_to.c
+)
+
 include_directories(
   lua
 )
+
+add_library(tolualib STATIC
+  ${TOLUA_LIB}
+)
+
+set_target_properties(tolualib
+    PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+)
+
 
 if (MSVC)
     set(CompilerFlags
@@ -35,6 +58,7 @@ if (MSVC)
 endif(MSVC)
 
 add_subdirectory(lua)
-add_executable(tolua ${TOLUA_SRC})
-target_link_libraries(tolua lua)
+add_executable(tolua++ ${TOLUA_SRC})
+target_link_libraries(tolualib lua)
+target_link_libraries(tolua++ lua)
 

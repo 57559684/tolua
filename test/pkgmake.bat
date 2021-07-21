@@ -1,0 +1,1 @@
+tolua++.exe -n helloxx -L basic.lua -o hello_gen.cpp -H hello_gen.h hello.pkg

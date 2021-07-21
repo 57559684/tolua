@@ -2,30 +2,30 @@
 project(tolua++)
 
 set(TOLUA_SRC 
-  tolua++.h
-  tolua_event.h
-  tolua_event.c
-  tolua_fix.h
-  tolua_fix.c
-  toluabind.h
-  toluabind.c
-  tolua_is.c
-  tolua_map.c
-  tolua_push.c
-  tolua_to.c
-  tolua.c
+  tolua/tolua++.h
+  tolua/tolua_event.h
+  tolua/tolua_event.c
+  tolua/tolua_fix.h
+  tolua/tolua_fix.c
+  tolua/toluabind.h
+  tolua/toluabind.c
+  tolua/tolua_is.c
+  tolua/tolua_map.c
+  tolua/tolua_push.c
+  tolua/tolua_to.c
+  tolua/tolua.c
 )
 
 set(TOLUA_LIB
-  tolua++.h
-  tolua_event.h
-  tolua_event.c
-  tolua_fix.h
-  tolua_fix.c
-  tolua_is.c
-  tolua_map.c
-  tolua_push.c
-  tolua_to.c
+  tolua/tolua++.h
+  tolua/tolua_event.h
+  tolua/tolua_event.c
+  tolua/tolua_fix.h
+  tolua/tolua_fix.c
+  tolua/tolua_is.c
+  tolua/tolua_map.c
+  tolua/tolua_push.c
+  tolua/tolua_to.c
 )
 
 include_directories(

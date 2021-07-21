@@ -6,7 +6,7 @@ set(TOLUA_SRC
   tolua_event.h
   tolua_event.c
   tolua_fix.h
-  tolua_fix.cpp
+  tolua_fix.c
   toluabind.h
   toluabind.c
   tolua_is.c

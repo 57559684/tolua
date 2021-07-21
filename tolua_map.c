@@ -211,7 +211,7 @@ static int tolua_bnd_releaseownership (lua_State* L)
 
 /* Type casting
 */
-int tolua_bnd_cast (lua_State* L)
+static int tolua_bnd_cast (lua_State* L)
 {
 
     /* // old code
@@ -367,7 +367,9 @@ TOLUA_API void tolua_open (lua_State* L)
         lua_pushboolean(L,1);
         lua_rawset(L,LUA_REGISTRYINDEX);
         
-        // create value root table
+        
+        /** create value root table
+         */
         lua_pushstring(L, TOLUA_VALUE_ROOT);
         lua_newtable(L);
         lua_rawset(L, LUA_REGISTRYINDEX);
